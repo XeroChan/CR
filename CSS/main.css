@@ -1,0 +1,360 @@
+:root {
+  --primary-color: #3562ED;
+  --secondary-color: #FFFFFF;
+  --accent-color: #ffb055;
+  --complementary-color: #052941;
+  --neutral-color: #E5E5E5;
+}
+
+html {
+  font-size: 16px;
+  color: white;
+  z-index: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  box-sizing: border-box;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--complementary-color);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--complementary-color);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--complementary-color);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--complementary-color);
+}
+
+.navBar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: center;
+  height: 5%;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--neutral-color);
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+.navBar a {
+  color: var(--neutral-color);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.navBar a:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+#logo {
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#searchForm {
+  display: flex;
+  align-items: center;
+}
+
+#searchBar {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-right: 1rem;
+  width: 200px;
+  background-color: var(--neutral-color);
+}
+
+#searchButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: var(--neutral-color);
+  color: var(--complementary-color);
+}
+
+#loginButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: var(--neutral-color);
+  color: var(--complementary-color);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#database {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  overflow: scroll;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Firefox */
+#database {
+  scrollbar-width: auto;
+  scrollbar-color: #8f54a0 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+#database::-webkit-scrollbar {
+  width: 13px;
+}
+
+#database::-webkit-scrollbar-track,
+#database::-webkit-scrollbar-corner,
+#database::-webkit-scrollbar:vertical {} {
+  display: none; /* Hide the vertical scrollbar and its thumb */
+}
+
+#database::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 10px;
+}
+
+#database li {
+  display: flex;
+  flex-direction: row;
+  flex-grow: initial;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+#database ul {
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+
+#recommendations {
+  width: 90%;
+  height: 30%;
+  margin: auto;
+}
+
+#database ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--complementary-color);
+}
+
+.login-container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-container form label {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.login-container form input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 300px;
+  background-color: var(--secondary-color);
+}
+
+.login-container .button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+}
+
+.login-container form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.login-container form button:hover {
+  background-color: var(--secondary-color);
+}
+.error{
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--complementary-color);
+}
+
+.login-container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-container form label {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.login-container form input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.login-container .button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+}
+
+.login-container form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.login-container form button:hover {
+  background-color: var(--accent-color);
+}
+.error{
+  text-align: center;
+}
+
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--complementary-color);
+}
+
+.registration-container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.registration-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.registration-container form label {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.registration-container form input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.registration-container .button-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+}
+
+.registration-container form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.registration-container form button:hover {
+  background-color: var(--accent-color);
+}

@@ -1,0 +1,9 @@
+Location_ID,LocationName,LocationAddress,Country,City,PostalCode,PhoneNumber
+1,Downtown Car Rental,123 Main St,USA,New York,10001,555-1234
+2,Airport Car Rental,456 Airport Rd,USA,Los Angeles,90045,555-5678
+3,Beach Car Rental,789 Ocean Blvd,USA,Miami,33139,555-9101
+4,City Car Rental,321 Elm St,USA,Chicago,60601,555-1212
+5,Mountain Car Rental,101 Pine Ave,USA,Denver,80202,555-3434
+6,Suburban Car Rental,555 Maple Ave,USA,Seattle,98101,555-5656
+7,Desert Car Rental,777 Sand St,USA,Phoenix,85004,555-7878
+8,River Car Rental,888 Waterfront Dr,USA,San Francisco,94111,555-9090

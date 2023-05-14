@@ -1,0 +1,9 @@
+Maintenance_ID,Car_ID,MaintenanceDate,MaintenanceType,MaintenanceCost,Description
+1,1,2022-02-01 08:00:00,50.00,200,"Oil change and filter replacement"
+2,2,2022-01-15 10:00:00,30.00,150,"Brake pad replacement"
+3,3,2022-02-28 12:00:00,60.00,300,"Transmission fluid change and filter replacement"
+4,4,2021-12-20 14:00:00,40.00,100,"Tire rotation and balancing"
+5,5,2022-03-10 16:00:00,70.00,250,"Engine tune-up"
+6,6,2022-01-05 08:00:00,20.00,120,"Windshield wiper replacement"
+7,7,2022-02-15 09:00:00,55.00,180,"Battery replacement"
+8,8,2021-12-31 11:00:00,45.00,150,"Air filter replacement"

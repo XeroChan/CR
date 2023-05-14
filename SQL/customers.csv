@@ -1,0 +1,9 @@
+Customer_ID,FirstName,LastName,EmailAddress,PhoneNumber,DriversLicenseNumber,Country,City,PostalCode,ResidentialAddress
+1,John,Doe,johndoe@example.com,1234567890,ABCD123456,USA,New York,10001,123 Main St
+2,Jane,Smith,janesmith@example.com,2345678901,EFGH123456,Canada,Toronto,M5S 2S2,456 Maple Ave
+3,Bob,Johnson,bobjohnson@example.com,3456789012,IJKL123456,USA,Los Angeles,90001,789 Oak St
+4,Sara,Lee,saralee@example.com,4567890123,MNOP123456,USA,Chicago,60601,567 Elm St
+5,Mike,Wong,mikewong@example.com,5678901234,QRST123456,Canada,Vancouver,V6T 1Z4,890 Pine St
+6,Emily,Chen,emilychen@example.com,6789012345,UVWX123456,USA,Miami,33101,345 Cedar St
+7,David,Li,davidli@example.com,7890123456,YZAB123456,Canada,Montreal,H3G 1M8,678 Birch St
+8,Maria,Garcia,mariagarcia@example.com,8901234567,CDEF123456,USA,San Francisco,94101,901 Walnut St

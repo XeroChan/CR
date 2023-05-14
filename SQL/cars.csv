@@ -1,0 +1,9 @@
+Car_ID,Make,Model,YearOfManufacture,Color,RegistrationNumber,CurrentMileage,TransmissionType,FuelType,NumberOfSeats,RentalRatePerDay,AirConditioning,AvailabilityStatus,CarIMG
+1,Toyota,Camry,2018,Red,ABC123,20000,Automatic,Petrol,5,50.00,1,1,"../Images/t_camry.jpg"
+2,Honda,Civic,2019,Black,DEF456,15000,Manual,Petrol,5,45.00,1,1,"../Images/h_civic.jpg"
+3,Ford,Escape,2020,White,GHI789,10000,Automatic,Diesel,5,60.00,0,1,"../Images/f_escape.jpg"
+4,Nissan,Altima,2017,Silver,JKL012,25000,Automatic,Petrol,5,55.00,0,1,"../Images/n_altima.jpg"
+5,Kia,Sorento,2021,Blue,MNO345,5000,Automatic,Petrol,7,70.00,1,1,"../Images/k_sorento.jpg"
+6,Chevrolet,Cruze,2016,Gray,PQR678,30000,Manual,Petrol,5,40.00,0,1,"../Images/c_cruze.jpg"
+7,Hyundai,Tucson,2022,Orange,STU901,2000,Automatic,Diesel,5,65.00,1,1,"../Images/h_tuscon.jpg"
+8,Mazda,CX-5,2019,Red,VWX234,20000,Automatic,Petrol,5,55.00,0,1,"../Images/m_cx5.jpg"
