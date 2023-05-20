@@ -162,6 +162,10 @@ body {
   margin: 0;
 }
 
+#database p{
+  text-align: left;
+  width: 20%;
+}
 
 #recommendations {
   width: 90%;
@@ -357,4 +361,22 @@ body {
 
 .registration-container form button:hover {
   background-color: var(--accent-color);
+}
+#recommendations ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#recommendations li::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 10px;
+  background-color: var(--accent-color);
+  margin-right: 10px;
+}
+
+textarea{
+  width: 30%;
+  height: auto;
 }

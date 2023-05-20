@@ -1,8 +1,6 @@
 <?php
 session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +20,7 @@ error_reporting(E_ALL);
     <script>
         window.onload = function() {
             <?php
-            if (isset($_SESSION['success']) && isset($_SESSION['user'])) {
+            if (isset($_SESSION['success']) && isset($_SESSION['username'])) {
             $success = $_SESSION['success'];
             unset($_SESSION['success']);
             if ($success) {
@@ -58,9 +56,9 @@ error_reporting(E_ALL);
         </article>
         <form method="POST" action="login.php">
             <?php
-            if(isset($_SESSION['user'])){
-                $user = $_SESSION['user'];
-                echo 'Witaj '.$user."!";
+            if(isset($_SESSION['username'])){
+                $usern = $_SESSION['username'];
+                echo 'Witaj '.$usern."!";
             } else{
                 echo '<button type="submit" id="loginButton">Zaloguj się</button>';
             }
@@ -79,23 +77,18 @@ error_reporting(E_ALL);
             ?>
         </article>
         <article id="recommendations">
+            <?php require "../PHP/getReviews.php" ?>
             <form method="POST" action="../PHP/postReview.php">
                 <fieldset>
                     <legend> Submit review:: </legend>
-                    <label for="fname">First name:</label><br>
-                    <input type="text" id="fname" name="fname" value="John"><br>
-                    <label for="lname">Last name:</label><br>
-                    <input type="text" id="lname" name="lname" value="Doe"><br>
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" value="youremail@gmail.com"><br><br>
-                    <label for="desc">Review:</label><br><textarea id="desc" name="review" rows="3" cols="50"> ...
-                    </textarea><br><br>
+                    <label for="desc">Review:</label><br>
+                    <textarea id="desc" name="review" rows="1" cols="50" placeholder="Rate us"></textarea>
                     <?php
-                    if(isset($_SESSION['user'])){
-                        $user = $_SESSION['user'];
+                    if(isset($_SESSION['username'])){
+                        $user = $_SESSION['username'];
                         echo '<button type="submit" id="reviewButton">Opublikuj</button>';
                     } else{
-                        echo '<p>Opinie mogą wystawić tylko zalogowaniu użytkownicy!</p>';
+                        echo '<p>Opinie mogą wystawić tylko zalogowani użytkownicy!</p>';
                     }
                     ?>
 

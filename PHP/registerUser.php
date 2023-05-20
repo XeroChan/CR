@@ -15,9 +15,11 @@ if (isset($host) && isset($user) && isset($pass) && isset($database)) {
         $stmt->execute();
         if ($stmt->affected_rows > 0) {
             $_SESSION['message'] = "Registration successful. Please login.";
+            $_SESSION['successR'] = true;
             header('Location: ../HTML/registration.php');
         } else {
             $_SESSION['message'] = "Registration failed.";
+            $_SESSION['successR'] = false;
             header('Location: ../HTML/registration.php');
         }
     }

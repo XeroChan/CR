@@ -16,7 +16,7 @@ if (isset($host) && isset($user) && isset($pass) && isset($database)) {
                 $row = $result->fetch_assoc();
                 $user = $row['Username'];
                 $passwd = $row['Password'];
-                $_SESSION['user'] = $user;
+                $_SESSION['username'] = $user;
                 $result->free_result();
                 header('Location: ../HTML/index.php');
             } else {

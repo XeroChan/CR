@@ -2,6 +2,25 @@
 <html lang="pl">
 <head>
     <link rel="stylesheet" href="../CSS/main.css">
+    <script>
+        window.onload = function() {
+            <?php
+            if (isset($_SESSION['successR'])) {
+            $successR = $_SESSION['successR'];
+            unset($_SESSION['successR']);
+            if ($successR) {
+            ?>
+            alert("User registered successfully.");
+            <?php
+            } else {
+            ?>
+            alert("Failed registering an user.");
+            <?php
+            }
+            }
+            ?>
+        }
+    </script>
 </head>
 <body>
 <section class="navBar">

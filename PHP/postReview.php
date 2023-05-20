@@ -1,16 +1,13 @@
 <?php
 session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 require_once "db_connect.php";
-if (isset($host) && isset($user) && isset($pass) && isset($database) && isset($_SESSION['user'])) {
+if (isset($host) && isset($user) && isset($pass) && isset($database) && isset($_SESSION['username'])) {
     $connect = @new mysqli($host, $user, $pass, $database);
     if ($connect->connect_errno != 0) {
         echo "Error: " . $connect->connect_errno . " Description: " . $connect->connect_error;
     } else {
-        $userRev = $_SESSION['user'];
+        $userRev = $_SESSION['username'];
         $review = $_POST['review']; // Pobierz zawartość recenzji z formularza
 
         // Pobierz ID użytkownika na podstawie nazwy użytkownika
