@@ -46,22 +46,5 @@ $(document).ready(function() {
             });
         }
     });
-    reviewButton.click(function(e) {
-        e.preventDefault();
-        const query = searchBar.val().trim();
-        if (query !== '') {
-            $.ajax({
-                url: '../PHP/postReview.php',
-                type: 'POST',
-                data: { query: query },
-                success: function(result) {
-                    database.html(result);
-                },
-                error: function() {
-                    console.log('Wystąpił błąd podczas publikacji opinii!');
-                }
-            });
-        }
-    });
 });
 

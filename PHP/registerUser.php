@@ -13,7 +13,6 @@ if (isset($host) && isset($user) && isset($pass) && isset($database)) {
         $stmt = $connect->prepare($query);
         $stmt->bind_param("ss", $login, $password);
         $stmt->execute();
-
         if ($stmt->affected_rows > 0) {
             $_SESSION['message'] = "Registration successful. Please login.";
             header('Location: ../HTML/registration.php');

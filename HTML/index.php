@@ -1,5 +1,9 @@
 <?php
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -15,7 +19,25 @@ session_start();
     <script src="../JS/jquery-3.6.4.js"></script>
     <script src="../JS/main.js"></script>
 
-
+    <script>
+        window.onload = function() {
+            <?php
+            if (isset($_SESSION['success']) && isset($_SESSION['user'])) {
+            $success = $_SESSION['success'];
+            unset($_SESSION['success']);
+            if ($success) {
+            ?>
+            alert("Review posted successfully.");
+            <?php
+            } else {
+            ?>
+            alert("Failed posting a review.");
+            <?php
+            }
+            }
+            ?>
+        }
+    </script>
 </head>
 <body>
 
@@ -57,7 +79,7 @@ session_start();
             ?>
         </article>
         <article id="recommendations">
-            <form>
+            <form method="POST" action="../PHP/postReview.php">
                 <fieldset>
                     <legend> Submit review:: </legend>
                     <label for="fname">First name:</label><br>
@@ -66,9 +88,17 @@ session_start();
                     <input type="text" id="lname" name="lname" value="Doe"><br>
                     <label for="email">Email:</label><br>
                     <input type="email" id="email" name="email" value="youremail@gmail.com"><br><br>
-                    <textarea id="desc" name="textarea" rows="3" cols="50"> ...
+                    <label for="desc">Review:</label><br><textarea id="desc" name="review" rows="3" cols="50"> ...
                     </textarea><br><br>
-                    <button type="button" id="reviewButton">Opublikuj</button>
+                    <?php
+                    if(isset($_SESSION['user'])){
+                        $user = $_SESSION['user'];
+                        echo '<button type="submit" id="reviewButton">Opublikuj</button>';
+                    } else{
+                        echo '<p>Opinie mogą wystawić tylko zalogowaniu użytkownicy!</p>';
+                    }
+                    ?>
+
                 </fieldset>
             </form>
         </article>
