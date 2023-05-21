@@ -15,13 +15,13 @@ if (isset($connect)) {
         $html .= "<ul>";
         while ($row = $result->fetch_assoc()) {
             $imagePath = str_replace('"', '', $row["CarIMG"]); // remove double quotes from the image path
-            $html .= "<li><img src='" . $imagePath . "' width='250' height='150'/>" . "<p>Make: " . $row["Make"] . "<br>Model: " . $row["Model"] . "<br>Location: " . $row["LocationName"] . "</p>";
+            $html .= "<li><img src='" . $imagePath . "' width='250' height='150'/>" . "<p>Marka: " . $row["Make"] . "<br>Model: " . $row["Model"] . "<br>Lokalizacja: " . $row["LocationName"] . "</p>";
             if(isset($_SESSION['username'])){ $html .= '<form method="GET" id="rentForm" action="../HTML/rentForm.php"><button type="submit" id="rentButton">Wypożycz</button></form>';};
             $html .="</li>";
         }
         $html .= "</ul>";
     } else {
-        $html = "<p>No cars available.</p>";
+        $html = "<p>Brak dostępnych aut.</p>";
     }
 
 // output the HTML markup to the page

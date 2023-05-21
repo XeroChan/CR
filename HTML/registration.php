@@ -10,11 +10,11 @@
             unset($_SESSION['successR']);
             if ($successR) {
             ?>
-            alert("User registered successfully.");
+            alert("Rejestracja przebiegła pomyślnie.");
             <?php
             } else {
             ?>
-            alert("Failed registering an user.");
+            alert("Wystąpił problem z rejestracją.");
             <?php
             }
             }
@@ -24,7 +24,7 @@
 </head>
 <body>
 <section class="navBar">
-    <section id="logo" onclick="location.href='index.php'">Szybkie kobiety i piękne samochody</section>
+    <section id="logo" onclick="location.href='index.php'">Euroautka</section>
     <nav>
         <a href="/html/">HTML</a>
         <a href="/css/">CSS</a>

@@ -8,9 +8,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Free Web tutorials">
     <meta name="author" content="John Doe">
-    <!-- <meta http-equiv="refresh" content="30"> -->
 
-    <title>Car Sharing</title>
+    <title>Wypożyczalnia aut</title>
     <link rel="stylesheet" href="../CSS/main.css">
     <script src="../JS/jquery-3.6.4.js"></script>
     <script src="../JS/main.js"></script>
@@ -79,8 +78,8 @@ session_start();
             <?php require "../PHP/getReviews.php" ?>
             <form method="POST" action="../PHP/postReview.php">
                 <fieldset>
-                    <legend> Submit review:: </legend>
-                    <label for="desc">Review:</label><br>
+                    <legend> Wystaw opinię:: </legend>
+                    <label for="desc">Opinia:</label><br>
                     <textarea id="desc" name="review" rows="1" cols="50" placeholder="Rate us"></textarea>
                     <?php
                     if(isset($_SESSION['username'])){
