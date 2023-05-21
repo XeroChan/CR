@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -25,34 +28,43 @@
 <body>
 <section class="navBar">
     <section id="logo" onclick="location.href='index.php'">Euroautka</section>
-    <nav>
-        <a href="/html/">HTML</a>
-        <a href="/css/">CSS</a>
-        <a href="/js/">JavaScript</a>
-        <a href="/python/">Python</a>
-    </nav>
-    <form method="POST" action="login.php">
-        <button type="submit">Zaloguj się</button>
-    </form>
+
+    <?php
+    if(isset($_SESSION['username'])){
+        $usern = $_SESSION['username'];
+        echo 'Witaj '.$usern."! ";
+        echo '<form method="GET" id="logoutForm" action="logout.php"'.'"><button type="submit" id="logoutButton">Wyloguj się</button></form>';
+    } else{
+        echo '<form method="POST" action="login.php">';
+        echo '<button type="submit" id="loginButton">Zaloguj się</button>';
+        echo '</form>';
+    }
+    ?>
 </section>
 
 <div class="registration-container">
     <h1>Zarejestruj się</h1>
     <?php if (!empty($message)) { ?>
-    <p><?php echo $message; ?></p>
+        <p><?php echo $message; ?></p>
     <?php } ?>
     <form method="POST" action="../PHP/registerUser.php">
+        <label for="name">Imie:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="sname">Nazwisko:</label>
+        <input type="text" id="sname" name="sname" required>
+
         <label for="username">Nazwa użytkownika:</label>
         <input type="text" id="username" name="username" required>
 
         <label for="email">Adres e-mail:</label>
         <input type="email" id="email" name="email" required>
 
+        <label for="phoneN">Nr Tel:</label>
+        <input type="tel" id="phoneN" name="phoneN" required>
+
         <label for="password">Hasło:</label>
         <input type="password" id="password" name="password" required>
-
-        <label for="confirm-password">Potwierdź hasło:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
 
         <div class="button-container">
             <button type="submit">Zarejestruj się</button>

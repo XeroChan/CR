@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS tbl_cars (
     PRIMARY KEY(Car_ID)
     );
 
-CREATE TABLE IF NOT EXISTS tbl_customers (
+/*CREATE TABLE IF NOT EXISTS tbl_customers (
                                              Customer_ID int UNSIGNED NOT NULL AUTO_INCREMENT,
                                              FirstName varchar(30),
     LastName varchar(30),
@@ -32,19 +32,17 @@ CREATE TABLE IF NOT EXISTS tbl_customers (
     PostalCode varchar(10),
     ResidentialAddress varchar(50),
     PRIMARY KEY(Customer_ID)
-    );
+    );*/
 
 CREATE TABLE IF NOT EXISTS tbl_reservations (
                                                 Reservation_ID int UNSIGNED NOT NULL AUTO_INCREMENT,
                                                 Car_ID int UNSIGNED NOT NULL,
                                                 StartDate DATETIME,
                                                 EndDate DATETIME,
-                                                RentalCost DECIMAL(6,2),
-    RentalStatus BOOLEAN, -- bool
     PRIMARY KEY(Reservation_ID)
     );
 
-CREATE TABLE IF NOT EXISTS tbl_payment (
+/*CREATE TABLE IF NOT EXISTS tbl_payment (
                                            Payment_ID int UNSIGNED NOT NULL AUTO_INCREMENT,
                                            Reservation_ID int UNSIGNED NOT NULL,
                                            PaymentDate DATETIME,
@@ -55,7 +53,7 @@ CREATE TABLE IF NOT EXISTS tbl_payment (
     REFERENCES tbl_reservations(Reservation_ID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
-    );
+    );*/
 
 CREATE TABLE IF NOT EXISTS tbl_location (
                                             Location_ID int UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -68,24 +66,25 @@ CREATE TABLE IF NOT EXISTS tbl_location (
     PRIMARY KEY(Location_ID)
     );
 
-CREATE TABLE IF NOT EXISTS tbl_maintenance (
-                                               Maintenance_ID int UNSIGNED NOT NULL AUTO_INCREMENT,
-                                               Car_ID int UNSIGNED NOT NULL,
-                                               MaintenanceDate DATETIME,
-                                               MaintenanceType DECIMAL(4,2),
-    MaintenanceCost int,
-    Description varchar(100),
-    PRIMARY KEY(Maintenance_ID)
-    );
+CREATE TABLE IF NOT EXISTS tbl_users (
+                                         User_ID int UNSIGNED NOT NULL AUTO_INCREMENT,
+                                         Username varchar(50),
+                                         Password varchar(50) NOT NULL,
+                                         Name varchar(50),
+                                         Surname varchar(50),
+                                         Email varchar(50),
+                                         Phone varchar(15),
+                                         PRIMARY KEY(User_ID)
+);
 
-CREATE TABLE IF NOT EXISTS tbl_customer_reservation_car (
+CREATE TABLE IF NOT EXISTS tbl_user_reservation_car (
                                                             Customer_reservation_car_ID int UNSIGNED NOT NULL AUTO_INCREMENT,
-                                                            Customer_ID int UNSIGNED NOT NULL,
+                                                            User_ID int UNSIGNED NOT NULL,
                                                             Reservation_ID int UNSIGNED NOT NULL,
                                                             Car_ID int UNSIGNED NOT NULL,
                                                             PRIMARY KEY(Customer_reservation_car_ID),
-    FOREIGN KEY(Customer_ID)
-    REFERENCES tbl_customers(Customer_ID)
+    FOREIGN KEY(User_ID)
+    REFERENCES tbl_users(User_ID)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     FOREIGN KEY(Reservation_ID)
@@ -94,21 +93,6 @@ CREATE TABLE IF NOT EXISTS tbl_customer_reservation_car (
     ON UPDATE CASCADE,
     FOREIGN KEY(Car_ID)
     REFERENCES tbl_cars(Car_ID)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-    );
-
-CREATE TABLE IF NOT EXISTS tbl_car_maintenance (
-                                                   Car_maintenance_ID int UNSIGNED NOT NULL AUTO_INCREMENT,
-                                                   Car_ID int UNSIGNED NOT NULL,
-                                                   Maintenance_ID int UNSIGNED NOT NULL,
-                                                   PRIMARY KEY(Car_maintenance_ID),
-    FOREIGN KEY(Car_ID)
-    REFERENCES tbl_cars(Car_ID)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-    FOREIGN KEY(Maintenance_ID)
-    REFERENCES tbl_maintenance(Maintenance_ID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
     );
@@ -134,12 +118,7 @@ CREATE TABLE IF NOT EXISTS tbl_review (
     PRIMARY KEY(Review_ID)
     );
 
-CREATE TABLE IF NOT EXISTS tbl_users (
-                                                    User_ID int UNSIGNED NOT NULL AUTO_INCREMENT,
-                                                    Username varchar(50),
-                                                    Password varchar(50) NOT NULL,
-                                                    PRIMARY KEY(User_ID)
-    );
+
 
 CREATE TABLE IF NOT EXISTS tbl_users_reviews (
                                          User_review_ID int UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -161,40 +140,40 @@ LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/cars.csv'
     FIELDS TERMINATED BY ','
     IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/customers.csv'
+/*LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/customers.csv'
     INTO TABLE tbl_customers
     FIELDS TERMINATED BY ','
-    IGNORE 1 ROWS;
+    IGNORE 1 ROWS;*/
 
 LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/reservation.csv'
     INTO TABLE tbl_reservations
     FIELDS TERMINATED BY ','
     IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/payment.csv'
+/*LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/payment.csv'
     INTO TABLE tbl_payment
     FIELDS TERMINATED BY ','
-    IGNORE 1 ROWS;
+    IGNORE 1 ROWS;*/
 
 LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/location.csv'
     INTO TABLE tbl_location
     FIELDS TERMINATED BY ','
     IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/maintenance.csv'
+/*LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/maintenance.csv'
     INTO TABLE tbl_maintenance
     FIELDS TERMINATED BY ','
-    IGNORE 1 ROWS;
+    IGNORE 1 ROWS;*/
 
-LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/cust_resv_car.csv'
+/*LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/cust_resv_car.csv'
     INTO TABLE tbl_customer_reservation_car
     FIELDS TERMINATED BY ','
-    IGNORE 1 ROWS;
+    IGNORE 1 ROWS;*/
 
-LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/car_maintenance.csv'
+/*LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/car_maintenance.csv'
     INTO TABLE tbl_car_maintenance
     FIELDS TERMINATED BY ','
-    IGNORE 1 ROWS;
+    IGNORE 1 ROWS;*/
 
 LOAD DATA INFILE 'D:/xampp/htdocs/CR/SQL/car_location.csv'
     INTO TABLE tbl_car_location

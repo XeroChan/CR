@@ -47,14 +47,15 @@ body {
   z-index: 1;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   align-content: center;
   height: auto;
-  width: 100%;
+  width: auto;
   background-color: var(--primary-color);
   color: var(--neutral-color);
   font-size: 1.8rem;
+  padding: 0 2%;
 }
 
 
@@ -71,7 +72,7 @@ body {
   margin: 0 0.5rem;
 }
 
-#searchButton:hover, #loginButton:hover{
+#searchButton:hover, #loginButton:hover, #logoutButton:hover{
   background-color: var(--accent-color);
   color: var(--secondary-color);
 }
@@ -106,7 +107,7 @@ body {
   color: var(--complementary-color);
 }
 
-#loginButton {
+#loginButton, #logoutButton {
   display: flex;
   justify-content: space-between;
   align-items: center;

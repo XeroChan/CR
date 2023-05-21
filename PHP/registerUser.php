@@ -9,9 +9,14 @@ if (isset($host) && isset($user) && isset($pass) && isset($database)) {
         $login = $_POST['username'];
         $password = $_POST['password'];
 
-        $query = "INSERT INTO tbl_users (Username, Password) VALUES (?, ?)";
+        $name = $_POST['name'];
+        $sname = $_POST['sname'];
+        $email = $_POST['email'];
+        $tel = $_POST['phoneN'];
+
+        $query = "INSERT INTO tbl_users (Username, Password, Name, Surname, Email, Phone) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($query);
-        $stmt->bind_param("ss", $login, $password);
+        $stmt->bind_param("ssssss", $login, $password, $name, $sname, $email, $tel);
         $stmt->execute();
         if ($stmt->affected_rows > 0) {
             $_SESSION['message'] = "Registration successful. Please login.";

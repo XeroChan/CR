@@ -12,12 +12,7 @@ unset($_SESSION['error']);
 <body>
 <section class="navBar">
     <section id="logo" onclick="location.href='index.php'">Euroautka</section>
-    <nav>
-        <a href="/html/">HTML</a>
-        <a href="/css/">CSS</a>
-        <a href="/js/">JavaScript</a>
-        <a href="/python/">Python</a>
-    </nav>
+
 </section>
 
 <div class="login-container">

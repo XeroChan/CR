@@ -41,11 +41,11 @@ if (isset($host) && isset($user) && isset($pass) && isset($database) && isset($_
         $stmt2->execute();
 
         if ($stmt->affected_rows > 0 && $stmt2->affected_rows > 0) {
-            $_SESSION['post'] = "Review posting successful.";
+            $_SESSION['post'] = "Opinia dodana pomyślnie.";
             $_SESSION['success'] = true;
             header('Location: ../HTML/index.php');
         } else {
-            $_SESSION['post'] = "Failed posting a review.";
+            $_SESSION['post'] = "Błąd w dodawaniu opinii.";
             $_SESSION['success'] = false;
             header('Location: ../HTML/index.php');
         }

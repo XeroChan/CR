@@ -22,11 +22,11 @@ session_start();
             unset($_SESSION['success']);
             if ($success) {
             ?>
-            alert("Review posted successfully.");
+            alert("Opinia dodana pomyślnie");
             <?php
             } else {
             ?>
-            alert("Failed posting a review.");
+            alert("Błąd w dodawaniu opinii");
             <?php
             }
             }
@@ -39,12 +39,7 @@ session_start();
     <?php include '../PHP/db_connect.php';?>
     <section class="navBar">
         <section id="logo" onclick="location.href='index.php'">Euroautka</section>
-        <nav>
-            <a href="/html/">HTML</a>
-            <a href="/css/">CSS</a>
-            <a href="/js/">JavaScript</a>
-            <a href="/python/">Python</a>
-        </nav>
+
         <article>
             <form method="GET" id="searchForm" action="#">
                 <label for="searchBar"></label>
@@ -52,17 +47,18 @@ session_start();
                 <button type="button" id="searchButton">Szukaj</button>
             </form>
         </article>
-        <form method="POST" action="login.php">
+
             <?php
             if(isset($_SESSION['username'])){
                 $usern = $_SESSION['username'];
-                echo 'Witaj '.$usern."!";
+                echo 'Witaj '.$usern."! ";
+                echo '<form method="GET" id="logoutForm" action="logout.php"'.'"><button type="submit" id="logoutButton">Wyloguj się</button></form>';
             } else{
+                echo '<form method="POST" action="login.php">';
                 echo '<button type="submit" id="loginButton">Zaloguj się</button>';
+                echo '</form>';
             }
             ?>
-            
-        </form>
     </section>
     <section class="main">
         <article id="database">

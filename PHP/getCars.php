@@ -16,7 +16,7 @@ if (isset($connect)) {
         while ($row = $result->fetch_assoc()) {
             $imagePath = str_replace('"', '', $row["CarIMG"]); // remove double quotes from the image path
             $html .= "<li><img src='" . $imagePath . "' width='250' height='150'/>" . "<p>Marka: " . $row["Make"] . "<br>Model: " . $row["Model"] . "<br>Lokalizacja: " . $row["LocationName"] . "</p>";
-            if(isset($_SESSION['username'])){ $html .= '<form method="GET" id="rentForm" action="../HTML/rentForm.php"><button type="submit" id="rentButton">Wypożycz</button></form>';};
+            if(isset($_SESSION['username'])){ $html .= '<form method="POST" id="rentForm" action="../HTML/rentForm.php"><button type="submit" id="rentButton">Wypożycz</button></form>'; $_SESSION['car'] = $row['Car_ID'];};
             $html .="</li>";
         }
         $html .= "</ul>";
