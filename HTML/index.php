@@ -80,7 +80,7 @@ session_start();
                 <fieldset>
                     <legend> Wystaw opinię:: </legend>
                     <label for="desc">Opinia:</label><br>
-                    <textarea id="desc" name="review" rows="1" cols="50" placeholder="Rate us"></textarea>
+                    <textarea id="desc" name="review" rows="1" cols="50" placeholder="Oceń nas!"></textarea>
                     <?php
                     if(isset($_SESSION['username'])){
                         $user = $_SESSION['username'];
