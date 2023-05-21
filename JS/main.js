@@ -23,9 +23,6 @@ $(document).ready(function() {
     const searchButton = $('#searchButton');
     const searchBar = $('#searchBar');
     const database = $('#database');
-    const email = $('#email');
-    const reviewButton = $('#reviewButton');
-    const loginButton = $('#loginButton');
 
     searchButton.click(function(event) {
         event.preventDefault();
