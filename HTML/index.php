@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -50,7 +48,8 @@ session_start();
         </nav>
         <article>
             <form method="GET" id="searchForm" action="#">
-                <label for="searchBar"></label><input id="searchBar" type="text" name="query" placeholder="Wyszukaj...">
+                <label for="searchBar"></label>
+                <input id="searchBar" type="text" name="query" placeholder="Wyszukaj...">
                 <button type="button" id="searchButton">Szukaj</button>
             </form>
         </article>

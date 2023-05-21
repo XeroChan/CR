@@ -47,16 +47,16 @@ body {
   z-index: 1;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center; /* Updated alignment */
+  justify-content: space-evenly;
+  align-items: center;
   align-content: center;
-  height: 6%;
+  height: auto;
   width: 100%;
   background-color: var(--primary-color);
   color: var(--neutral-color);
   font-size: 1.8rem;
-  padding: 1rem 0;
 }
+
 
 
 .navBar a {
@@ -69,6 +69,11 @@ body {
   color: var(--accent-color);
   text-decoration: none;
   margin: 0 0.5rem;
+}
+
+#searchButton:hover, #loginButton:hover{
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
 }
 
 #logo {
@@ -87,7 +92,7 @@ body {
   border: none;
   border-radius: 5px;
   margin-right: 1rem;
-  width: 200px;
+  width: 60%;
   background-color: var(--neutral-color);
 }
 
@@ -102,6 +107,9 @@ body {
 }
 
 #loginButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;

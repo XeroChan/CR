@@ -20,7 +20,9 @@ if (isset($connect)) {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $imagePath = str_replace('"', '', $row["CarIMG"]); // remove double quotes from the image path
-            $search .= "<li><img src='" . $imagePath . "' width='250' height='150'/>" . "<p>Make: " . $row["Make"] . "<br>Model: " . $row["Model"] . "<br>Location: " . $row["LocationName"] . "</p>" . "</li>";
+            $search .= "<li><img src='" . $imagePath . "' width='250' height='150'/>" . "<p>Make: " . $row["Make"] . "<br>Model: " . $row["Model"] . "<br>Location: " . $row["LocationName"] . "</p>";
+            if(isset($_SESSION['username'])){ $search .= '<form method="GET" id="rentForm" action="../HTML/rentForm.php"><button type="submit" id="rentButton">Wypożycz</button></form>';};
+            $search .="</li>";
         }
     } else {
         $search = "<p>No cars available.</p>";
