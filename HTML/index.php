@@ -41,7 +41,7 @@ session_start();
 
     <?php include '../PHP/db_connect.php';?>
     <section class="navBar">
-        <section id="logo" onclick="location.href='index.php'">Szybkie kobiety i piękne samochody</section>
+        <section id="logo" onclick="location.href='index.php'">Euroautka</section>
         <nav>
             <a href="/html/">HTML</a>
             <a href="/css/">CSS</a>
