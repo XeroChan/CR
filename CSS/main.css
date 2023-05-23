@@ -27,6 +27,10 @@ body {
   background-color: var(--complementary-color);
 }
 
+fieldset{
+  border: 0.5rem ridge var(--accent-color);
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--complementary-color);
   opacity: 1; /* Firefox */
