@@ -6,6 +6,7 @@
   --accent-color: #ffb055;
   --complementary-color: #052941;
   --neutral-color: #E5E5E5;
+  --errors: #d74242;
 }
 
 html {
@@ -257,7 +258,7 @@ fieldset{
 }
 .error{
   text-align: center;
-  color: var(--secondary-color);
+  color: var(--errors);
 }
 
 .login-container {
