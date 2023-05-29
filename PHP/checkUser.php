@@ -20,7 +20,8 @@ if (isset($host) && isset($user) && isset($pass) && isset($database)) {
                 $result->free_result();
                 header('Location: ../HTML/index.php');
             } else {
-                $_SESSION['error'] = 'Nie znaleziono takiego użytkownika. <br> Spróbuj się zarejestrować.';
+                $message = "Nie znaleziono takiego użytkownika. <br> Spróbuj się zarejestrować.";
+                $_SESSION['message'] = $message;
                 header('Location: ../HTML/login.php');
             }
         }

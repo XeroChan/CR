@@ -1,29 +1,12 @@
 <?php
 session_start();
+$message = isset($_SESSION['message']) ? $_SESSION['message'] : '';
+unset($_SESSION['message']);
 ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <link rel="stylesheet" href="../CSS/main.css">
-    <script>
-        window.onload = function() {
-            <?php
-            if (isset($_SESSION['successRent'])) {
-            $successRent = $_SESSION['successRent'];
-            unset($_SESSION['successRent']);
-            if ($successRent) {
-            ?>
-            alert("Wypożyczenie przebiegło pomyślnie.");
-            <?php
-            } else {
-            ?>
-            alert("Wystąpił problem z wypożyczeniem.");
-            <?php
-            }
-            }
-            ?>
-        }
-    </script>
 </head>
 <body>
 <section class="navBar">

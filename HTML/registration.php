@@ -1,20 +1,12 @@
 <?php
-session_start()
+session_start();
+$message = isset($_SESSION['message']) ? $_SESSION['message'] : '';
+unset($_SESSION['message']);
 ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <link rel="stylesheet" href="../CSS/main.css">
-    <script>
-        window.onload = function() {
-            <?php
-                if (isset($_SESSION['message'])) {
-                    $message = $_SESSION['message'];
-                    unset($_SESSION['message']);
-                }
-            ?>
-        }
-    </script>
     <title>Rejestracja</title>
 </head>
 <body>

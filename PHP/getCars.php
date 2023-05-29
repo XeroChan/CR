@@ -24,10 +24,8 @@ if (isset($connect)) {
         $html = "<p>Brak dostępnych aut.</p>";
     }
 
-// output the HTML markup to the page
     echo $html;
 
-// close the database connection
     $connect->close();
 }
 

@@ -1,5 +1,7 @@
 <?php
 session_start();
+$message = isset($_SESSION['message']) ? $_SESSION['message'] : '';
+unset($_SESSION['message']);
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -14,25 +16,6 @@ session_start();
     <script src="../JS/jquery-3.6.4.js"></script>
     <script src="../JS/main.js"></script>
 
-    <script>
-        window.onload = function() {
-            <?php
-            if (isset($_SESSION['success']) && isset($_SESSION['username'])) {
-            $success = $_SESSION['success'];
-            unset($_SESSION['success']);
-            if ($success) {
-            ?>
-            alert("Opinia dodana pomyślnie");
-            <?php
-            } else {
-            ?>
-            alert("Błąd w dodawaniu opinii");
-            <?php
-            }
-            }
-            ?>
-        }
-    </script>
 </head>
 <body>
 
@@ -72,6 +55,7 @@ session_start();
         </article>
         <article id="recommendations">
             <?php require "../PHP/getReviews.php" ?>
+
             <form method="POST" action="../PHP/postReview.php">
                 <fieldset>
                     <legend> Wystaw opinię:: </legend>
@@ -80,12 +64,14 @@ session_start();
                     <?php
                     if(isset($_SESSION['username'])){
                         $user = $_SESSION['username'];
-                        echo '<button type="submit" id="reviewButton">Opublikuj</button>';
+                        echo '<button type="submit" id="reviewButton">Opublikuj</button><br>';
                     } else{
-                        echo '<p>Opinie mogą wystawić tylko zalogowani użytkownicy!</p>';
+                        echo '<p>Opinie mogą wystawić tylko zalogowani użytkownicy!</p><br>';
                     }
                     ?>
-
+                    <?php if (!empty($message)) { ?>
+                        <p class="error" style="text-align: left"><?php echo $message; ?></p>
+                    <?php } ?>
                 </fieldset>
             </form>
         </article>

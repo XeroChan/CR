@@ -1,7 +1,7 @@
 <?php
 session_start();
-$error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
-unset($_SESSION['error']);
+$message = isset($_SESSION['message']) ? $_SESSION['message'] : '';
+unset($_SESSION['message']);
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +17,8 @@ unset($_SESSION['error']);
 
 <div class="login-container">
     <h1>Zaloguj się</h1>
-    <?php if (!empty($error)) { ?>
-        <p class="error"><?php echo $error; ?></p>
+    <?php if (!empty($message)) { ?>
+        <p class="error"><?php echo $message; ?></p>
     <?php } ?>
     <form method="POST" action="../PHP/checkUser.php">
         <label for="username">Nazwa użytkownika:</label>
