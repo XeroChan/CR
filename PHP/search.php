@@ -4,7 +4,11 @@ require_once('db_connect.php');
 
 // query the database using the search term
 $query = $_GET['query'];
-$sql = "SELECT * FROM tbl_cars as c, tbl_location as l WHERE c.Make LIKE ? OR c.Model LIKE ? OR c.YearOfManufacture LIKE ? OR l.LocationName LIKE ?";
+$sql = "SELECT * FROM tbl_cars AS c
+        INNER JOIN tbl_car_location AS cl ON c.Car_ID = cl.Car_ID
+        INNER JOIN tbl_location AS l ON cl.Location_ID = l.Location_ID
+        WHERE c.Make LIKE ? OR c.Model LIKE ? OR c.YearOfManufacture LIKE ? OR l.LocationName LIKE ?";
+
 if (isset($connect)) {
     $stmt = $connect->prepare($sql);
     $queryParam = "%$query%";

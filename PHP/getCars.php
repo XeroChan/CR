@@ -3,7 +3,9 @@ $_SESSION['cars']="";
 require_once('db_connect.php');
 
 // query the database using the search term
-$sql = "SELECT * FROM tbl_cars, tbl_location";
+$sql = "SELECT * FROM tbl_car_location
+        INNER JOIN tbl_cars ON tbl_car_location.Car_ID = tbl_cars.Car_ID
+        INNER JOIN tbl_location ON tbl_car_location.Location_ID = tbl_location.Location_ID";
 $sqlC = "SELECT COUNT(Car_ID) FROM tbl_cars";
 if (isset($connect)) {
     $result = $connect->query($sql);
