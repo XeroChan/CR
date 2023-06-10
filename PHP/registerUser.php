@@ -9,12 +9,13 @@ if (isset($host) && isset($user) && isset($pass) && isset($database)) {
 
         $login = $_POST['username'];
         $password = $_POST['password'];
+        $email = $_POST['email'];
 
-        $query = "SELECT * FROM tbl_users WHERE Username='$login' AND Password='$password'";
+        $query = "SELECT * FROM tbl_users WHERE Username='$login' OR Email='$email'";
         if ($result = @$connect->query($query)) {
             $users = $result->num_rows;
             if ($users > 0) {
-                $_SESSION['message'] = "Użytkownik o takiej nazwie jest już zarejestrowany!";
+                $_SESSION['message'] = "Użytkownik o takiej nazwie oraz emailu jest już zarejestrowany!";
                 header('Location: ../HTML/registration.php');
             } else {
                 $name = $_POST['name'];
